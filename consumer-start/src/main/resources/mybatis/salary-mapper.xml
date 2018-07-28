@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.alibaba.middleware.tddl.mybatis.SalaryMapper">
+    <select id="selectSalaryByEmpNo" resultType="com.alibaba.middleware.tddl.Salary" resultMap="salaryMap">
+        select * from salaries where id > #{id}
+    </select>
+    <resultMap type="com.alibaba.middleware.tddl.Salary" id="salaryMap">
+         <result property="empNo" column="emp_no"/>
+         <result property="salary" column="salary"/>
+         <result property="fromDate" column="from_date"/>
+         <result property="toDate" column="to_date"/>
+     </resultMap>
+</mapper>
